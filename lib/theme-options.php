@@ -104,20 +104,52 @@ class IGV_Admin {
 		// Set our CMB2 fields
 
 		$cmb->add_field( array(
-			'name' => __( 'Test Text', 'IGV' ),
-			'desc' => __( 'field description (optional)', 'IGV' ),
-			'id'   => $this->prefix . 'test_text',
-			'type' => 'text',
-			'default' => 'Default Text',
+			'name' => __( 'Logo', 'cmb2' ),
+			'desc' => __( 'for splash', 'cmb2' ),
+			'id'   => $prefix . 'logo',
+			'type' => 'file',
 		) );
 
 		$cmb->add_field( array(
-			'name'    => __( 'Test Color Picker', 'IGV' ),
-			'desc'    => __( 'field description (optional)', 'IGV' ),
-			'id'      => $this->prefix . 'test_colorpicker',
-			'type'    => 'colorpicker',
-			'default' => '#bada55',
+			'name' => __( 'Physical address', 'cmb2' ),
+			'desc' => __( '', 'cmb2' ),
+			'id'   => $prefix . 'address',
+			'type' => 'textarea_small',
 		) );
+
+		$cmb->add_field( array(
+			'name' => __( 'Email address', 'IGV' ),
+			'desc' => __( '', 'IGV' ),
+			'id'   => $this->prefix . 'email',
+			'type' => 'text_email',
+			'default' => 'thecornerstore@gmail.com',
+		) );
+
+		$cmb->add_field( array(
+			'name' => __( 'Instagram handle', 'IGV' ),
+			'desc' => __( 'without the @', 'IGV' ),
+			'id'   => $this->prefix . 'instagram',
+			'type' => 'text_medium',
+			'default' => 'the_corner_store',
+		) );
+
+		$group_field_id = $cmb->add_field( array(
+		'id'          => $this->prefix . 'images',
+		'type'        => 'group',
+		'description' => __( 'Background Images', 'cmb2' ),
+		'options'     => array(
+			'group_title'   => __( 'Image {#}', 'cmb2' ), // {#} gets replaced by row number
+			'add_button'    => __( 'Add Another Image', 'cmb2' ),
+			'remove_button' => __( 'Remove Image', 'cmb2' ),
+			'sortable'      => true, // beta
+		),
+	) );
+
+		$cmb->add_group_field( $group_field_id, array(
+		'name' => __( 'Image', 'cmb2' ),
+		'id'   => 'image',
+		'type' => 'file',
+	) );
 
 	}
 
