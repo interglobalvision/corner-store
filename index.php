@@ -1,40 +1,33 @@
 <?php
 get_header();
+$logo = IGV_get_option('_igv_logo');
+$address = IGV_get_option('_igv_address');
+$email = IGV_get_option('_igv_email');
+$instagram = IGV_get_option('_igv_instagram');
 ?>
 
 <!-- main content -->
 
 <main id="main-content">
 
-  <!-- main posts loop -->
-  <section id="posts">
-
-<?php
-if( have_posts() ) {
-  while( have_posts() ) {
-    the_post();
-?>
-
-    <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-
-      <a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-
-      <?php the_content(); ?>
-
-    </article>
-
-<?php
+<?php 
+if (! empty($logo)) {
+  echo '<img id="logo" src=' . $logo . '>';
+}
+if (! empty($address) || ! empty($logo) || ! empty($instagram)) {
+  echo '<div id="contact">';
+  if (! empty($address)) {
+    echo wpautop( $address );
   }
-} else {
+  if (! empty($email)) {
+    echo '<a href="mailto:' . $email . '">' . $email . '</a><br>';
+  }
+  if (! empty($instagram)) {
+    echo '<a href="http://instagram.com/' . $instagram . '">@' . $instagram . '</a>';
+  } 
+  echo '</div>';
+}
 ?>
-    <article class="u-alert"><?php _e('Sorry, no posts matched your criteria :{'); ?></article>
-<?php
-} ?>
-
-  <!-- end posts -->
-  </section>
-
-  <?php get_template_part('partials/pagination'); ?>
 
 <!-- end main-content -->
 
