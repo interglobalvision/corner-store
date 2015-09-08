@@ -106,14 +106,14 @@ class IGV_Admin {
 		$cmb->add_field( array(
 			'name' => __( 'Logo', 'cmb2' ),
 			'desc' => __( 'for splash', 'cmb2' ),
-			'id'   => $prefix . 'logo',
+			'id'   => $this->prefix . 'logo',
 			'type' => 'file',
 		) );
 
 		$cmb->add_field( array(
 			'name' => __( 'Physical address', 'cmb2' ),
 			'desc' => __( '', 'cmb2' ),
-			'id'   => $prefix . 'address',
+			'id'   => $this->prefix . 'address',
 			'type' => 'textarea_small',
 		) );
 
@@ -134,11 +134,11 @@ class IGV_Admin {
 		) );
 
 		$group_field_id = $cmb->add_field( array(
-		'id'          => $this->prefix . 'images',
+		'id'          => $this->prefix . 'background_images',
 		'type'        => 'group',
 		'description' => __( 'Background Images', 'cmb2' ),
 		'options'     => array(
-			'group_title'   => __( 'Image {#}', 'cmb2' ), // {#} gets replaced by row number
+			'group_title'   => __( 'Background Image {#}', 'cmb2' ), // {#} gets replaced by row number
 			'add_button'    => __( 'Add Another Image', 'cmb2' ),
 			'remove_button' => __( 'Remove Image', 'cmb2' ),
 			'sortable'      => true, // beta
