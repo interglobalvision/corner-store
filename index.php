@@ -4,12 +4,21 @@ $logo = IGV_get_option('_igv_logo');
 $address = IGV_get_option('_igv_address');
 $email = IGV_get_option('_igv_email');
 $instagram = IGV_get_option('_igv_instagram');
-?>
+$bg_images = IGV_get_option('_igv_background_images');
 
+if (! empty($bg_images)) {
+  echo '<div id="background-slider">';
+  foreach ($bg_images as $image) {
+    echo '<img src="' . $image['image'] . '">';
+  }
+  echo '</div>';
+}
+?>
 <!-- main content -->
 
-<main id="main-content">
+<main id="main-content" class="u-holder">
 
+  <div class="u-held">
 <?php 
 if (! empty($logo)) {
   echo '<img id="logo" src=' . $logo . '>';
@@ -28,6 +37,8 @@ if (! empty($address) || ! empty($logo) || ! empty($instagram)) {
   echo '</div>';
 }
 ?>
+
+  </div>
 
 <!-- end main-content -->
 
