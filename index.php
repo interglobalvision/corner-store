@@ -16,9 +16,8 @@ if (! empty($bg_images)) {
 ?>
 <!-- main content -->
 
-<main id="main-content" class="u-holder">
+<main id="main-content" class="u-align-center">
 
-  <div class="u-held u-align-center">
 <?php 
 if (! empty($logo)) {
   echo '<img id="logo" src=' . $logo . '>';
@@ -37,8 +36,6 @@ if (! empty($address) || ! empty($logo) || ! empty($instagram)) {
   echo '</div>';
 }
 ?>
-
-  </div>
 
 <!-- end main-content -->
 
