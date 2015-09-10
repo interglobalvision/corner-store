@@ -9,11 +9,34 @@ function l(data) {
 jQuery(document).ready(function () {
   'use strict';
 
-  var $bgSlider = $('#background-slider');
+  var $bgSlider = $('#background-slider'),
+    $main = $('#main-content'),
+    $logo = $('#logo'),
+    centerLogo = function() {
+      var logoHeight = $logo.height(),
+        windowHeight = $(window).height();
+
+      $logo.css('margin-top', ( windowHeight - logoHeight ) / 2);
+
+      if ($main.css('opacity') == 0) {
+        $main.animate({'opacity':1.0,}, 1000);
+      }
+    };
+
+  centerLogo();
+
+  $(window).on('resize', function() {
+    centerLogo();
+  });
+
+  $(document).on('cycle-initialized', '#background-slider', function() {
+    $bgSlider.animate({'opacity':1.0,}, 1000);
+  });
 
   $bgSlider.cycle({
     slides: '> div',
     random: true,
     speed: 1000,
   });
+
 });
