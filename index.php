@@ -9,7 +9,7 @@ $bg_images = IGV_get_option('_igv_background_images');
 if (! empty($bg_images)) {
   echo '<div id="background-slider">';
   foreach ($bg_images as $image) {
-    echo '<img src="' . $image['image'] . '">';
+    echo '<div style="background-image: url(' . $image['image'] . ')"></div>';
   }
   echo '</div>';
 }
@@ -18,7 +18,7 @@ if (! empty($bg_images)) {
 
 <main id="main-content" class="u-holder">
 
-  <div class="u-held">
+  <div class="u-held u-align-center">
 <?php 
 if (! empty($logo)) {
   echo '<img id="logo" src=' . $logo . '>';

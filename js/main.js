@@ -8,5 +8,12 @@ function l(data) {
 
 jQuery(document).ready(function () {
   'use strict';
-  l('Hola Globie');
+
+  var $bgSlider = $('#background-slider');
+
+  $bgSlider.cycle({
+    slides: '> div',
+    random: true,
+    speed: 1000,
+  });
 });
