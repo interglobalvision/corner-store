@@ -808,7 +808,7 @@ a:visited {
 }
 html,
 body {
-  background-color: #0e0e0e;
+  background-color: #fdfdfd;
   color: #fdfdfd;
   width: 100%;
   height: 100%;
@@ -817,12 +817,13 @@ img {
   max-width: 100%;
   height: auto;
 }
-main {
+main#main-content {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  opacity: 0;
 }
 #background-slider {
   position: fixed;
@@ -831,6 +832,7 @@ main {
   width: 100%;
   height: 100%;
   z-index: 0;
+  opacity: 0;
 }
 #background-slider div {
   background-position: center;
@@ -869,8 +871,14 @@ img#logo {
 #footer {
   width: 100%;
 }
-@media screen and (max-width: 1272px) {
-  html {
-    width: 100%;
+@media screen and (max-height: 400px) {
+  img#logo {
+    max-width: 70%;
+  }
+  #contact {
+    margin-top: 16px;
+  }
+  #contact p {
+    margin-bottom: 0.6em;
   }
 }
