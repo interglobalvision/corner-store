@@ -122,7 +122,7 @@ class IGV_Admin {
 			'desc' => __( '', 'IGV' ),
 			'id'   => $this->prefix . 'email',
 			'type' => 'text_email',
-			'default' => 'thecornerstore@gmail.com',
+			'default' => 'the1cornerstore@gmail.com',
 		) );
 
 		$cmb->add_field( array(
