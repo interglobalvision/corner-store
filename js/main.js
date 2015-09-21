@@ -35,7 +35,7 @@ jQuery(document).ready(function () {
 
   $bgSlider.cycle({
     slides: '> div',
-    random: true,
+    random: false,
     speed: 1000,
   });
 
