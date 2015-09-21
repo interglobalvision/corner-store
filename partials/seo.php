@@ -1,5 +1,7 @@
 <meta name="twitter:site" value="@">
 <?php
+$bg_images = IGV_get_option('_igv_background_images');
+
 if( have_posts() ) {
   while( have_posts() ) {
     the_post();
@@ -15,7 +17,7 @@ if( !empty($thumb) && is_single() ) {
 <?php
 } else {
 ?>
-  <meta property="og:image" content="<?php echo get_stylesheet_directory_uri(); ?>/img/og.jpg" />
+  <meta property="og:image" content="<?php echo $bg_images[0]['image']; ?>" />
 <?php
 }
 if( is_home() ) {
