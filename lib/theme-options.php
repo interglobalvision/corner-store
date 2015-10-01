@@ -134,22 +134,29 @@ class IGV_Admin {
 		) );
 
 		$group_field_id = $cmb->add_field( array(
-		'id'          => $this->prefix . 'background_images',
-		'type'        => 'group',
-		'description' => __( 'Background Images', 'cmb2' ),
-		'options'     => array(
-			'group_title'   => __( 'Background Image {#}', 'cmb2' ), // {#} gets replaced by row number
-			'add_button'    => __( 'Add Another Image', 'cmb2' ),
-			'remove_button' => __( 'Remove Image', 'cmb2' ),
-			'sortable'      => true, // beta
-		),
-	) );
+			'id'          => $this->prefix . 'background_images',
+			'type'        => 'group',
+			'description' => __( 'Background Images', 'cmb2' ),
+			'options'     => array(
+				'group_title'   => __( 'Background Image {#}', 'cmb2' ), // {#} gets replaced by row number
+				'add_button'    => __( 'Add Another Image', 'cmb2' ),
+				'remove_button' => __( 'Remove Image', 'cmb2' ),
+				'sortable'      => true, // beta
+			),
+		) );
 
 		$cmb->add_group_field( $group_field_id, array(
-		'name' => __( 'Image', 'cmb2' ),
-		'id'   => 'image',
-		'type' => 'file',
-	) );
+			'name' => __( 'Image', 'cmb2' ),
+			'id'   => 'image',
+			'type' => 'file',
+		) );
+
+		$cmb->add_field( array(
+			'name' => __( 'Google Analytics code', 'cmb2' ),
+			'desc' => __( '', 'cmb2' ),
+			'id'   => $this->prefix . 'analytics',
+			'type' => 'textarea_small',
+		) );
 
 	}
 
