@@ -3,7 +3,6 @@ get_header();
 $logo = IGV_get_option('_igv_logo');
 $address = IGV_get_option('_igv_address');
 $address_replaced = preg_replace("/[\s]/","+",$address);
-$maps_url = 'https://www.google.com.mx/maps/place/'.$address_replaced;
 $email = IGV_get_option('_igv_email');
 $instagram = IGV_get_option('_igv_instagram');
 $bg_images = IGV_get_option('_igv_background_images');
@@ -27,7 +26,7 @@ if (! empty($logo)) {
 if (! empty($address) || ! empty($logo) || ! empty($instagram)) {
   echo '<div id="contact">';
   if (! empty($address)) {
-    echo '<a href="' . $maps_url . '" target="_blank">' . wpautop( $address ) . '</a>';
+    echo wpautop( $address );
   }
   if (! empty($email)) {
     echo '<a href="mailto:' . $email . '">' . $email . '</a><br>';
