@@ -155,7 +155,7 @@ class IGV_Admin {
 			'name' => __( 'Google Analytics code', 'cmb2' ),
 			'desc' => __( '', 'cmb2' ),
 			'id'   => $this->prefix . 'analytics',
-			'type' => 'textarea_small',
+			'type' => 'textarea_code',
 		) );
 
 	}
